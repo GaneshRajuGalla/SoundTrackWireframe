@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.341875416340-laphur3j714jat05d6hbgah8vc912jsq</string>
+				<string>fb944626579983181</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>944626579983181</string>
+	<key>FacebookDisplayName</key>
+	<string>Zentra</string>
+	<key>GIDClientID</key>
+	<string>341875416340-laphur3j714jat05d6hbgah8vc912jsq.apps.googleusercontent.com</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ConfigurationIntent</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GT-Alpina-Condensed-Bold-Trial.otf</string>
+		<string>GT-Alpina-Condensed-Medium-Trial.otf</string>
+		<string>GT-Alpina-Condensed-Regular-Trial.otf</string>
+		<string>GT-Alpina-Standard-Light-Trial.otf</string>
+		<string>Manrope-Bold.ttf</string>
+		<string>Manrope-Light.ttf</string>
+		<string>Manrope-Regular.ttf</string>
+		<string>Manrope-SemiBold.ttf</string>
+		<string>PlayfairDisplay-Regular.ttf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+</dict>
+</plist>

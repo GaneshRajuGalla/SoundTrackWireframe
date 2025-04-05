@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-SemiBold.ttf">
+            <string>Manrope-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HistoryCell" customModule="SoundTrack_wireframe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-L6-Pfn" customClass="CustomView" customModule="SoundTrack_wireframe" customModuleProvider="target">
+                        <rect key="frame" x="22.666666666666671" y="10" width="80" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMc-31-f5m" customClass="CustomView" customModule="SoundTrack_wireframe" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oec-fr-bfj">
+                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                        <fontDescription key="fontDescription" name="Manrope-SemiBold" family="Manrope" pointSize="24"/>
+                                        <color key="textColor" name="AppWhiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infinity" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-62-GK9">
+                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gg0-62-GK9" secondAttribute="bottom" constant="10" id="6Z8-w1-JJM"/>
+                                    <constraint firstItem="gg0-62-GK9" firstAttribute="top" secondItem="kMc-31-f5m" secondAttribute="top" constant="10" id="HFv-YN-nT7"/>
+                                    <constraint firstItem="oec-fr-bfj" firstAttribute="top" secondItem="kMc-31-f5m" secondAttribute="top" constant="10" id="JXw-a2-BPw"/>
+                                    <constraint firstAttribute="height" constant="60" id="UZi-uc-bXg"/>
+                                    <constraint firstAttribute="trailing" secondItem="gg0-62-GK9" secondAttribute="trailing" constant="10" id="VLQ-Do-rxo"/>
+                                    <constraint firstItem="oec-fr-bfj" firstAttribute="leading" secondItem="kMc-31-f5m" secondAttribute="leading" constant="10" id="a9a-1Y-Vwh"/>
+                                    <constraint firstAttribute="trailing" secondItem="oec-fr-bfj" secondAttribute="trailing" constant="10" id="eSC-hX-9Rf"/>
+                                    <constraint firstAttribute="bottom" secondItem="oec-fr-bfj" secondAttribute="bottom" constant="10" id="jLL-pv-wDz"/>
+                                    <constraint firstAttribute="width" constant="60" id="sLA-x6-wSW"/>
+                                    <constraint firstItem="gg0-62-GK9" firstAttribute="leading" secondItem="kMc-31-f5m" secondAttribute="leading" constant="10" id="xte-gK-tCF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kMc-31-f5m" firstAttribute="centerX" secondItem="ZeG-L6-Pfn" secondAttribute="centerX" id="aHZ-HW-FFj"/>
+                            <constraint firstItem="kMc-31-f5m" firstAttribute="centerY" secondItem="ZeG-L6-Pfn" secondAttribute="centerY" id="aWR-HC-7bb"/>
+                            <constraint firstAttribute="width" constant="80" id="dcL-us-GjT"/>
+                            <constraint firstAttribute="height" constant="80" id="y54-kl-Rq2"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Work" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-mg-2Q3">
+                        <rect key="frame" x="0.0" y="95" width="125" height="37"/>
+                        <fontDescription key="fontDescription" name="Manrope-SemiBold" family="Manrope" pointSize="13"/>
+                        <color key="textColor" name="AppWhiteColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZeG-L6-Pfn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="8vf-hE-gJC"/>
+                <constraint firstItem="gZF-mg-2Q3" firstAttribute="top" secondItem="ZeG-L6-Pfn" secondAttribute="bottom" constant="5" id="EPe-QU-foK"/>
+                <constraint firstItem="gZF-mg-2Q3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Law-NM-4OG"/>
+                <constraint firstAttribute="trailing" secondItem="gZF-mg-2Q3" secondAttribute="trailing" id="YJb-Wx-PG6"/>
+                <constraint firstItem="ZeG-L6-Pfn" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="haK-sX-uWL"/>
+                <constraint firstAttribute="bottom" secondItem="gZF-mg-2Q3" secondAttribute="bottom" constant="5" id="rpp-Vi-ehu"/>
+            </constraints>
+            <size key="customSize" width="125" height="137"/>
+            <connections>
+                <outlet property="imageInfinity" destination="gg0-62-GK9" id="0iH-Qb-pif"/>
+                <outlet property="labelMinutes" destination="oec-fr-bfj" id="4MX-DV-YTz"/>
+                <outlet property="labelName" destination="gZF-mg-2Q3" id="4dD-EO-2t2"/>
+                <outlet property="viewBack" destination="ZeG-L6-Pfn" id="Fo9-tY-dFU"/>
+            </connections>
+            <point key="canvasLocation" x="38.931297709923662" y="-1.7605633802816902"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="infinity" width="35" height="17"/>
+        <namedColor name="AppWhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

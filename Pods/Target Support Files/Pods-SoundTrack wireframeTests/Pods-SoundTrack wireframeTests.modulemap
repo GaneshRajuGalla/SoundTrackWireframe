@@ -1,0 +1,6 @@
+framework module Pods_SoundTrack_wireframeTests {
+  umbrella header "Pods-SoundTrack wireframeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

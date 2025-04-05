@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GT-Alpina-Condensed-Medium-Trial.otf">
+            <string>GTAlpinaTrial-CondensedMedium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SubHeaderView" customModule="Soundtrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSi-i3-Gri">
+                    <rect key="frame" x="46" y="0.0" width="301" height="75"/>
+                    <fontDescription key="fontDescription" name="GTAlpinaTrial-CondensedMedium" family="GT Alpina Trial" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uSi-i3-Gri" secondAttribute="bottom" id="Oy0-Ia-F3k"/>
+                <constraint firstAttribute="trailing" secondItem="uSi-i3-Gri" secondAttribute="trailing" constant="46" id="Pps-S0-mIk"/>
+                <constraint firstItem="uSi-i3-Gri" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="46" id="Sr9-D0-9hQ"/>
+                <constraint firstItem="uSi-i3-Gri" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rfd-Pw-Sbg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelTitle" destination="uSi-i3-Gri" id="mFz-WB-1NF"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="55.985915492957751"/>
+        </view>
+    </objects>
+</document>

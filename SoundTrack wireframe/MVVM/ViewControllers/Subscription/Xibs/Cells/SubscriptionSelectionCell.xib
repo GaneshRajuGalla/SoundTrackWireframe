@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-Light.ttf">
+            <string>Manrope-Light</string>
+        </array>
+        <array key="Manrope-SemiBold.ttf">
+            <string>Manrope-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubscriptionSelectionCell" rowHeight="84" id="KGk-i7-Jjw" customClass="SubscriptionSelectionCell" customModule="Soundtrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApL-Wa-xrN" customClass="CustomView" customModule="Soundtrack" customModuleProvider="target">
+                        <rect key="frame" x="16" y="5" width="328" height="74"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ngu-p1-1hb">
+                                <rect key="frame" x="16" y="8" width="296" height="58"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-d3-6gI">
+                                        <rect key="frame" x="0.0" y="0.0" width="296" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-0s-ev2">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="29"/>
+                                                <fontDescription key="fontDescription" name="Manrope-SemiBold" family="Manrope" pointSize="18"/>
+                                                <color key="textColor" name="AppWhiteColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 4.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noh-mG-pGG">
+                                                <rect key="frame" x="148" y="0.0" width="148" height="29"/>
+                                                <fontDescription key="fontDescription" name="Manrope-SemiBold" family="Manrope" pointSize="18"/>
+                                                <color key="textColor" name="AppWhiteColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-SG-Wkz">
+                                        <rect key="frame" x="0.0" y="29" width="296" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84U-uF-lpl">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="29"/>
+                                                <fontDescription key="fontDescription" name="Manrope-Light" family="Manrope" pointSize="14"/>
+                                                <color key="textColor" name="AppWhiteColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save 17%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-Su-j5F">
+                                                <rect key="frame" x="148" y="0.0" width="148" height="29"/>
+                                                <fontDescription key="fontDescription" name="Manrope-Light" family="Manrope" pointSize="14"/>
+                                                <color key="textColor" name="AppWhiteColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ngu-p1-1hb" firstAttribute="top" secondItem="ApL-Wa-xrN" secondAttribute="top" constant="8" id="4zd-1H-azV"/>
+                            <constraint firstAttribute="bottom" secondItem="Ngu-p1-1hb" secondAttribute="bottom" constant="8" id="ReG-G2-UGg"/>
+                            <constraint firstItem="Ngu-p1-1hb" firstAttribute="leading" secondItem="ApL-Wa-xrN" secondAttribute="leading" constant="16" id="S8x-Sj-nT0"/>
+                            <constraint firstAttribute="trailing" secondItem="Ngu-p1-1hb" secondAttribute="trailing" constant="16" id="ptI-1R-csE"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="AppGray"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ApL-Wa-xrN" secondAttribute="trailing" constant="16" id="0La-JN-ZfN"/>
+                    <constraint firstItem="ApL-Wa-xrN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1Py-xH-eNW"/>
+                    <constraint firstAttribute="bottom" secondItem="ApL-Wa-xrN" secondAttribute="bottom" constant="5" id="4bY-sA-80h"/>
+                    <constraint firstItem="ApL-Wa-xrN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="q9F-Ws-m4W"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="labelPrice" destination="noh-mG-pGG" id="K5b-Gc-Iou"/>
+                <outlet property="labelSubscriptionType" destination="DA5-0s-ev2" id="zwG-N5-CcH"/>
+                <outlet property="viewBestValue" destination="kJM-SG-Wkz" id="FwQ-lv-Jup"/>
+            </connections>
+            <point key="canvasLocation" x="99.236641221374043" y="-18.30985915492958"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AppGray">
+            <color red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppWhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
