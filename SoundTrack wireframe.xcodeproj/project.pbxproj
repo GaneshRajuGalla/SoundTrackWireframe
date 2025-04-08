@@ -12,6 +12,7 @@
 		6BCEAD912AAAE61000DA5213 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD902AAAE61000DA5213 /* APIManager.swift */; };
 		6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */; };
 		6BCEAD952AAAE74400DA5213 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */; };
+		6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E0FA76E2DA5136C007F9402 /* SuperwallKit */; };
 		7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012811C2A32E34F0066C50C /* HowLongCell.swift */; };
 		7012811F2A32E34F0066C50C /* HowLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012811D2A32E34F0066C50C /* HowLongCell.xib */; };
 		701281212A32E4E20066C50C /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 701281202A32E4E20066C50C /* Manrope-SemiBold.ttf */; };
@@ -377,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				190A967304FDC3F398996B67 /* Pods_SoundTrack_wireframe.framework in Frameworks */,
+				6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,6 +1062,9 @@
 				Base,
 			);
 			mainGroup = 703D15C52A27075F00E455B2;
+			packageReferences = (
+				6E0FA76D2DA5136C007F9402 /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+			);
 			productRefGroup = 703D15CF2A27075F00E455B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1826,6 +1831,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E0FA76D2DA5136C007F9402 /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/superwall/Superwall-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E0FA76E2DA5136C007F9402 /* SuperwallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E0FA76D2DA5136C007F9402 /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
+			productName = SuperwallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		703D15DA2A27075F00E455B2 /* SoundTrack_wireframe.xcdatamodeld */ = {

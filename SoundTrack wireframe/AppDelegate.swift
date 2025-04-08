@@ -12,6 +12,7 @@ import GoogleSignIn
 import FacebookCore
 import UserNotifications
 import SwiftyStoreKit
+import SuperwallKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         self.configureWithFacebook(application, didFinishLaunchingWithOptions: launchOptions)
         setUpIAP()
+        Superwall.configure(apiKey: "pk_806cc665da24c587361b61e409578720facf30e42a8d4170")
 //        self.configureNotifications()
         return true
     }
