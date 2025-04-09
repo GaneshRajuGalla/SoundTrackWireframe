@@ -51,7 +51,6 @@ class SelectWorkTypeVC: UIViewController {
         viewPlayNow.backgroundColor = UIColor(hexString: category.colorHex)
         self.configure(with: category.animationName)
         isUserSubscribed = Utility.shared.isPremiumUser()
-        showHintPopup()
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,16 +77,6 @@ class SelectWorkTypeVC: UIViewController {
         let vc = SelectTimeDurationVC.getVC(.dashBoard)
         vc.category = self.category
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    private func showHintPopup(){
-        if (Utility.shared.appShowFreeMusicPopUp == 0) {
-            Utility.shared.displayAlertWithCompletion(title: "Free music", message: "The first section in each category is free, forever!", controls: ["Got it"]) { i in
-                if i == "Got it"{
-                    Utility.shared.appShowFreeMusicPopUp += 1
-                }
-            }
-        }
     }
     
     func configure(with fileUrl: String) {
