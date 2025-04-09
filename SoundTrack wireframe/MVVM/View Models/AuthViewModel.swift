@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SuperwallKit
 
 enum LoginTypes: String
 {
@@ -59,6 +60,8 @@ class AuthViewModel
             switch  result{
             case .success(let value):
                 Logger.log(value)
+                Superwall.shared.identify(userId: socialId)
+                Superwall.shared.setUserAttributes(["fullName": name])
                 if let response = value as? [String: Any]
                 {
                     let statusCode = response["status"] as? Int ?? 0

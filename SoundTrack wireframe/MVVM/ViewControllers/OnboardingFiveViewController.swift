@@ -12,36 +12,76 @@ class OnboardingFiveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the Superwall delegate to receive updates on subscription status
-        Superwall.shared.delegate = self
     }
 
     @IBAction func tryForFreePressed(_ sender: Any) {
-        // Register the onboarding completion event, which will trigger the paywall
-//        #if DEBUG
-//        Superwall.shared.register(placement: "campaign_trigger")
-//        #endif
-        Superwall.shared.register(placement: "onboarding_completed")
-    }
-}
-
-// MARK: - SuperwallDelegate
-extension OnboardingFiveViewController: SuperwallDelegate {
-
-    func subscriptionStatusDidChange(_ status: SubscriptionStatus) {
-        switch status {
-        case .active:
-            // Only if the user has an active subscription (or 7-day trial started)
-            // allow navigation to main app
-            DispatchQueue.main.async {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC") as! LandingVC
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        case .inactive:
-            // User hasn't subscribed or started trial, keep them on paywall
-            print("User must start free trial to proceed.")
+        switch Superwall.shared.subscriptionStatus {
         case .unknown:
-            break
+            self.showToast(message: "⏳ Checking subscription status...")
+
+        case .inactive:
+            Superwall.shared.register(placement: "onboarding_completed", handler: createPaywallHandler())
+
+        case .active:
+            self.navigateToRoot()
+        }
+    }
+
+    private func createPaywallHandler() -> PaywallPresentationHandler {
+        let handler = PaywallPresentationHandler()
+
+        handler.onPresent { paywallInfo in
+            print("✅ Paywall presented with ID: \(paywallInfo.identifier)")
+        }
+
+        handler.onSkip { reason in
+            switch reason {
+            case .noRuleMatch:
+                self.showToast(message: "✅ You're already subscribed. Unlocking feature...")
+                self.navigateToRoot()
+
+            case .holdout:
+                self.showToast(message: "🚫 You're in a holdout group. No paywall will be shown.")
+
+            case .eventNotFound:
+                self.showToast(message: "⚠️ Paywall placement not found. Please contact support.")
+
+            case .noAudienceMatch:
+                self.showToast(message: "🚫 You don’t meet the criteria for this offer.")
+
+            case .placementNotFound:
+                self.showToast(message: "❌ Invalid placement identifier used.")
+
+            @unknown default:
+                self.showToast(message: "❓ Paywall skipped due to unknown reason.")
+            }
+        }
+
+        handler.onDismiss { _, result in
+            switch result {
+            case .purchased:
+                self.showToast(message: "🎉 Subscription successful!")
+                self.navigateToRoot()
+
+            case .restored:
+                self.showToast(message: "🔄 Subscription restored.")
+                self.navigateToRoot()
+
+            case .declined:
+                self.showToast(message: "🔒 Paywall closed. Subscription required to proceed.")
+            }
+        }
+
+        handler.onError { error in
+            self.showToast(message: "❌ Failed to show paywall: \(error.localizedDescription)")
+        }
+
+        return handler
+    }
+
+    private func navigateToRoot() {
+        DispatchQueue.main.async {
+            Utility.shared.makeDashboardRoot()
         }
     }
 }
