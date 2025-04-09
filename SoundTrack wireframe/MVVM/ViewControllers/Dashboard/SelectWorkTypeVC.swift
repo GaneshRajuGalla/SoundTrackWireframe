@@ -150,24 +150,11 @@ extension SelectWorkTypeVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         guard let subcategories else{ return }
         Haptics.shared.play(.rigid)
-        if subcategories.count>0{
-            if isUserSubscribed{
-                let vc = SelectTimeDurationVC.getVC(.dashBoard)
-                vc.category = self.category
-                vc.subCategory = subcategories[indexPath.item]
-                self.navigationController?.pushViewController(vc, animated: true)
-            }else {
-                if (indexPath.row != 0){
-                    let vc = SubscriptionVC.getVC(.dashBoard)
-                    vc.delegate = self
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }else {
-                    let vc = SelectTimeDurationVC.getVC(.dashBoard)
-                    vc.category = self.category
-                    vc.subCategory = subcategories[indexPath.item]
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
+        if subcategories.count>0 {
+            let vc = SelectTimeDurationVC.getVC(.dashBoard)
+            vc.category = self.category
+            vc.subCategory = subcategories[indexPath.item]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
