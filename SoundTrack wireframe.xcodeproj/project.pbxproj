@@ -13,6 +13,7 @@
 		6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */; };
 		6BCEAD952AAAE74400DA5213 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */; };
 		6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E0FA76E2DA5136C007F9402 /* SuperwallKit */; };
+		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
 		7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012811C2A32E34F0066C50C /* HowLongCell.swift */; };
 		7012811F2A32E34F0066C50C /* HowLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012811D2A32E34F0066C50C /* HowLongCell.xib */; };
 		701281212A32E4E20066C50C /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 701281202A32E4E20066C50C /* Manrope-SemiBold.ttf */; };
@@ -212,6 +213,7 @@
 		6BCEAD902AAAE61000DA5213 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVC.swift; sourceTree = "<group>"; };
+		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		6F2AE3886F5619DF78E56C8C /* Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoundTrack wireframe-SoundTrack wireframeUITests/Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7012811C2A32E34F0066C50C /* HowLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowLongCell.swift; sourceTree = "<group>"; };
 		7012811D2A32E34F0066C50C /* HowLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowLongCell.xib; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E85D88B2DA70F15008BA122 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		700C73BB2A45C6C4007D8B69 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +486,7 @@
 		703D15C52A27075F00E455B2 = {
 			isa = PBXGroup;
 			children = (
+				6E85D88B2DA70F15008BA122 /* Utilities */,
 				846E6FD42D8F7D77008DFA22 /* Kumbh_Sans */,
 				703D15D02A27075F00E455B2 /* SoundTrack wireframe */,
 				703D15EA2A27076300E455B2 /* SoundTrack wireframeTests */,
@@ -1324,6 +1335,7 @@
 				70ABB65C2A37000600BA455A /* Utility.swift in Sources */,
 				7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */,
 				7092D0542A386E0D0066D8AE /* HistoryModel.swift in Sources */,
+				6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */,
 				6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */,
 				703D16172A27092A00E455B2 /* UITabbar+extension.swift in Sources */,
 				70683A452A3B41E1009D5129 /* SideMenuCell.swift in Sources */,
@@ -1745,6 +1757,7 @@
 				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.soundtrack.app.MusicTrackWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1775,6 +1788,7 @@
 				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.soundtrack.app.MusicTrackWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
