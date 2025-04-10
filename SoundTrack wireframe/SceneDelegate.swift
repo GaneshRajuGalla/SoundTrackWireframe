@@ -72,15 +72,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setRootView(scene: UIWindowScene){
         let window = UIWindow(windowScene: scene)
-//        {
-        if Utility.shared.appSessionCount > 0 && Utility.shared.getCurrentUserToken() == ""{
-            navigationController = UINavigationController(rootViewController: LandingVC.getVC(.main))
-        }else{
+        if UserDefaultManager.shared.get(for: .isSubscribed) == true {
+            navigationController = UINavigationController(rootViewController: SelectEmotionTypeVC.getVC(.dashBoard))
+        } else {
             navigationController = UINavigationController(rootViewController: OnboardingOneViewController.getVC(.main))
-
         }
-//        }else{
+//        if Utility.shared.appSessionCount > 0 && Utility.shared.getCurrentUserToken() == ""{
 //            navigationController = UINavigationController(rootViewController: LandingVC.getVC(.main))
+//        }else{
+//            navigationController = UINavigationController(rootViewController: OnboardingOneViewController.getVC(.main))
 //        }
         navigationController.isNavigationBarHidden = true
         window.rootViewController = navigationController

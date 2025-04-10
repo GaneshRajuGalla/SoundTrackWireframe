@@ -23,6 +23,7 @@ class OnboardingFiveViewController: UIViewController {
             Superwall.shared.register(placement: "onboarding_completed", handler: createPaywallHandler())
 
         case .active:
+            UserDefaultManager.shared.set(true, for: .isSubscribed)
             self.navigateToRoot()
         }
     }
@@ -37,6 +38,7 @@ class OnboardingFiveViewController: UIViewController {
         handler.onSkip { reason in
             switch reason {
             case .noRuleMatch:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
                 self.showToast(message: "✅ You're already subscribed. Unlocking feature...")
                 self.navigateToRoot()
 
@@ -60,10 +62,12 @@ class OnboardingFiveViewController: UIViewController {
         handler.onDismiss { _, result in
             switch result {
             case .purchased:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
                 self.showToast(message: "🎉 Subscription successful!")
                 self.navigateToRoot()
 
             case .restored:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
                 self.showToast(message: "🔄 Subscription restored.")
                 self.navigateToRoot()
 
