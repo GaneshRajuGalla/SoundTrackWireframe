@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController!
+    var coordinator: NavigationCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -55,13 +56,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func setRootView(scene: UIWindowScene) {
         let window = UIWindow(windowScene: scene)
+        let coordinator = NavigationCoordinator()
+        self.coordinator = coordinator // Keep reference if needed
 
         if UserDefaultManager.shared.get(for: .isSubscribed) == true {
             navigationController = UINavigationController(rootViewController: SelectEmotionTypeVC.getVC(.dashBoard))
         } else {
             let welcomeView = WelcomeToZentraView()
+                .environmentObject(coordinator)
             let hostingController = UIHostingController(rootView: welcomeView)
             navigationController = UINavigationController(rootViewController: hostingController)
+            coordinator.navigationController = navigationController
         }
 
         navigationController.isNavigationBarHidden = true

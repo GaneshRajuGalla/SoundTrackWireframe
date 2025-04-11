@@ -13,9 +13,15 @@
 		6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */; };
 		6BCEAD952AAAE74400DA5213 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */; };
 		6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E0FA76E2DA5136C007F9402 /* SuperwallKit */; };
+		6E19EB272DA91A5D00A2EFC2 /* FocusChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB262DA91A5D00A2EFC2 /* FocusChallengeView.swift */; };
+		6E19EB292DA91D5700A2EFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB282DA91D5700A2EFC2 /* ContentView.swift */; };
+		6E19EB2B2DA91E8600A2EFC2 /* SoundFocusBoostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */; };
+		6E19EB2D2DA9200A00A2EFC2 /* MeetZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */; };
 		6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49E2492DA8C67600532675 /* Colors.xcassets */; };
-		6E53AF472DA8661500B55FBE /* WelcomeToZentraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */; };
+		6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
+		6EF4A1372DA9126600801C3E /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */; };
+		6EF4A13B2DA913A600801C3E /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A13A2DA913A600801C3E /* Text+Extension.swift */; };
 		7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012811C2A32E34F0066C50C /* HowLongCell.swift */; };
 		7012811F2A32E34F0066C50C /* HowLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012811D2A32E34F0066C50C /* HowLongCell.xib */; };
 		701281212A32E4E20066C50C /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 701281202A32E4E20066C50C /* Manrope-SemiBold.ttf */; };
@@ -215,9 +221,15 @@
 		6BCEAD902AAAE61000DA5213 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVC.swift; sourceTree = "<group>"; };
+		6E19EB262DA91A5D00A2EFC2 /* FocusChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusChallengeView.swift; sourceTree = "<group>"; };
+		6E19EB282DA91D5700A2EFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFocusBoostView.swift; sourceTree = "<group>"; };
+		6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetZentraView.swift; sourceTree = "<group>"; };
 		6E49E2492DA8C67600532675 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraVC.swift; sourceTree = "<group>"; };
+		6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraView.swift; sourceTree = "<group>"; };
 		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		6EF4A13A2DA913A600801C3E /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		6F2AE3886F5619DF78E56C8C /* Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoundTrack wireframe-SoundTrack wireframeUITests/Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7012811C2A32E34F0066C50C /* HowLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowLongCell.swift; sourceTree = "<group>"; };
 		7012811D2A32E34F0066C50C /* HowLongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowLongCell.xib; sourceTree = "<group>"; };
@@ -444,7 +456,10 @@
 		6E53AF452DA8659000B55FBE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */,
+				6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */,
+				6E19EB262DA91A5D00A2EFC2 /* FocusChallengeView.swift */,
+				6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */,
+				6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -452,9 +467,36 @@
 		6E85D88B2DA70F15008BA122 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */,
+				6EF4A1392DA9139300801C3E /* Extensions */,
+				6EF4A1382DA9138800801C3E /* Helpers */,
+				6EF4A1352DA9122500801C3E /* Views */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6EF4A1352DA9122500801C3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */,
+				6E19EB282DA91D5700A2EFC2 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6EF4A1382DA9138800801C3E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6EF4A1392DA9139300801C3E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6EF4A13A2DA913A600801C3E /* Text+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		700C73BB2A45C6C4007D8B69 /* Others */ = {
@@ -1298,12 +1340,16 @@
 				701281272A32FBB10066C50C /* RAProgressRing.swift in Sources */,
 				703D16132A27092A00E455B2 /* Dictionary+extensions.swift in Sources */,
 				703D161C2A27097E00E455B2 /* NetworkCall.swift in Sources */,
+				6E19EB292DA91D5700A2EFC2 /* ContentView.swift in Sources */,
 				704D9E9A2A41CC090085E82E /* MediaViewModel.swift in Sources */,
-				6E53AF472DA8661500B55FBE /* WelcomeToZentraVC.swift in Sources */,
+				6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */,
 				7092D0512A38579C0066D8AE /* HistoryCell.swift in Sources */,
 				7063FE252A9F74FC0063D03F /* SubscriptionBenefitsCell.swift in Sources */,
+				6E19EB2B2DA91E8600A2EFC2 /* SoundFocusBoostView.swift in Sources */,
 				709E02F42A497902007AC5CF /* AVPlayerItemObserver.swift in Sources */,
 				6BCEAD952AAAE74400DA5213 /* SubscriptionVC.swift in Sources */,
+				6E19EB2D2DA9200A00A2EFC2 /* MeetZentraView.swift in Sources */,
+				6EF4A1372DA9126600801C3E /* PrimaryButtonStyle.swift in Sources */,
 				7063FE212A9F6B200063D03F /* SubscriptionSelectionCell.swift in Sources */,
 				703D16152A27092A00E455B2 /* Gesture+extension.swift in Sources */,
 				7083EB2A2A68FAC400372B83 /* extension+NSManged.swift in Sources */,
@@ -1311,6 +1357,7 @@
 				7054F3092A418EE900DBA171 /* AboutAppVC.swift in Sources */,
 				704584CD2A72500200616811 /* ControlCentreManger.swift in Sources */,
 				7092D04C2A3839E90066D8AE /* DashboardViewModel.swift in Sources */,
+				6EF4A13B2DA913A600801C3E /* Text+Extension.swift in Sources */,
 				703D16252A270AF600E455B2 /* AppleSignIn.swift in Sources */,
 				7093E6572A95C839006B9E31 /* MusicAttributes.swift in Sources */,
 				7092D04E2A3839F70066D8AE /* CategoriesModel.swift in Sources */,
@@ -1341,6 +1388,7 @@
 				703D15DC2A27075F00E455B2 /* SoundTrack_wireframe.xcdatamodeld in Sources */,
 				70E8F74D2A5D6C41004AA0BD /* DWAnimatedLabel.swift in Sources */,
 				7051BA762A32096200D97E82 /* SelectWorkTypeVC.swift in Sources */,
+				6E19EB272DA91A5D00A2EFC2 /* FocusChallengeView.swift in Sources */,
 				703D16142A27092A00E455B2 /* String+extensions.swift in Sources */,
 				70B2C7942A7CD2B200C2F8EB /* SoundtrackError.swift in Sources */,
 				709E02F22A497902007AC5CF /* AVPlayerObserver.swift in Sources */,
