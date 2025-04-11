@@ -46,7 +46,10 @@ struct WelcomeToZentraView: View {
                     if showDescription {
                         Text("You’ve made a powerful\ndecision to take control of\nyour focus and productivity.")
                             .foregroundLinearGradient(
-                                colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                stops: [
+                                    .init(color: .white, location: 0),
+                                    .init(color: Color("9A9A9A"), location: 1)
+                                ],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -105,6 +108,7 @@ struct WelcomeToZentraView: View {
 
 #Preview {
     WelcomeToZentraView()
+        .environmentObject(NavigationCoordinator())
 }
 
 import Foundation

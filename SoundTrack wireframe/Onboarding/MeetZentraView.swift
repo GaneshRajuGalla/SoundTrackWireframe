@@ -46,7 +46,10 @@ struct MeetZentraView: View {
                     if showDescription {
                         Text("Personalized soundscapes and a\nsmart focus timer designed to help\nyou enter flow state—fast.")
                             .foregroundLinearGradient(
-                                colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                stops: [
+                                    .init(color: .white, location: 0),
+                                    .init(color: Color("9A9A9A"), location: 1)
+                                ],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -59,7 +62,7 @@ struct MeetZentraView: View {
                     
                     if showButton {
                         Button {
-                            nav.push(ZentraTrustView())
+                            nav.push(FocusStruggleTimeView())
                         } label: {
                             Text("CONTINUE")
                         }
@@ -105,4 +108,5 @@ struct MeetZentraView: View {
 
 #Preview {
     MeetZentraView()
+        .environmentObject(NavigationCoordinator())
 }

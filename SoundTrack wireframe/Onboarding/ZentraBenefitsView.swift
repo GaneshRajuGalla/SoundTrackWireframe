@@ -48,7 +48,10 @@ struct ZentraBenefitsView: View {
                                         .frame(width: 6, height: 6)
                                     Text(item)
                                         .foregroundLinearGradient(
-                                            colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                            stops: [
+                                                .init(color: .white, location: 0),
+                                                .init(color: Color("9A9A9A"), location: 1)
+                                            ],
                                             startPoint: .leading,
                                             endPoint: .trailing
                                         )
@@ -119,4 +122,5 @@ struct ZentraBenefitsView: View {
 
 #Preview {
     ZentraBenefitsView()
+        .environmentObject(NavigationCoordinator())
 }

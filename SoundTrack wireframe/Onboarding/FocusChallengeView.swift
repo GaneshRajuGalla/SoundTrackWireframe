@@ -47,14 +47,20 @@ struct FocusChallengeView: View {
                         VStack(spacing: 10) {
                             Text("Distractions are everywhere.")
                                 .foregroundLinearGradient(
-                                    colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                    stops: [
+                                        .init(color: .white, location: 0),
+                                        .init(color: Color("9A9A9A"), location: 1)
+                                    ],
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 )
                             
                             Text("Zentra is your tool to reclaim your time and energy.")
                                 .foregroundLinearGradient(
-                                    colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                    stops: [
+                                        .init(color: .white, location: 0),
+                                        .init(color: Color("9A9A9A"), location: 1)
+                                    ],
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 )
@@ -114,4 +120,5 @@ struct FocusChallengeView: View {
 
 #Preview {
     FocusChallengeView()
+        .environmentObject(NavigationCoordinator())
 }

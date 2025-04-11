@@ -1,5 +1,5 @@
 //
-//  SoundFocusBoostView.swift
+//  FocusGoalSelectionView.swift
 //  SoundTrack wireframe
 //
 //  Created by Kuldeep on 11/04/25.
@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-struct SoundFocusBoostView: View {
-    @State private var showImage = false
+struct FocusGoalSelectionView: View {
+    @State private var selectedGoal: String? = nil
     @State private var showTitle = false
-    @State private var showDescription = false
+    @State private var showOptions = false
     @State private var showButton = false
     @EnvironmentObject var nav: NavigationCoordinator
+
+    private let options = [
+        "Deep Work / Study",
+        "Reducing phone distractions",
+        "Staying consistent with routines",
+        "Managing ADHD",
+        "Other"
+    ]
 
     var body: some View {
         ZStack {
@@ -24,45 +32,46 @@ struct SoundFocusBoostView: View {
             ContentView {
                 VStack(spacing: 0) {
                     if showTitle {
-                        Text("The right sound\nhelps you focus.")
-                            .font(.system(size: 32, weight: .bold))
+                        Text("What’s your #1 focus\ngoal right now?")
+                            .font(.system(size: 28, weight: .bold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .transition(.opacity)
                     }
-                    
+
                     Spacer()
-                    
-                    if showImage {
-                        Image("zentra_sound")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 207)
-                            .transition(.opacity)
+
+                    if showOptions {
+                        VStack(spacing: 16) {
+                            ForEach(options, id: \.self) { option in
+                                Button {
+                                    withAnimation {
+                                        selectedGoal = option
+                                    }
+                                } label: {
+                                    Text(option)
+                                        .font(.system(size: 16, weight: .medium))
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 16)
+                                        .background(selectedGoal == option ? Color("E0D6FF") : Color.clear)
+                                        .foregroundColor(selectedGoal == option ? Color("484848") : .white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 30)
+                                                .stroke(Color.white.opacity(0.7), lineWidth: 1)
+                                        )
+                                        .cornerRadius(30)
+                                }
+                            }
+                        }
+                        .transition(.opacity)
+                        .padding(.top, 10)
                     }
-                    
+
                     Spacer()
-                    
-                    if showDescription {
-                        Text("Research shows the right sound\nfrequencies can boost attention\nand reduce mental fatigue.")
-                            .foregroundLinearGradient(
-                                stops: [
-                                    .init(color: .white, location: 0),
-                                    .init(color: Color("9A9A9A"), location: 1)
-                                ],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                            .font(.system(size: 20))
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                    }
-                    
-                    Spacer()
-                    
+
                     if showButton {
                         Button {
-                            nav.push(MeetZentraView())
+                            nav.push(ZentraTrustView())
                         } label: {
                             Text("CONTINUE")
                         }
@@ -87,17 +96,11 @@ struct SoundFocusBoostView: View {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay) {
                 withTransaction(Transaction(animation: animation)) {
-                    showImage = true
+                    showOptions = true
                 }
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 2) {
-                withTransaction(Transaction(animation: animation)) {
-                    showDescription = true
-                }
-            }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 3) {
                 withTransaction(Transaction(animation: animation)) {
                     showButton = true
                 }
@@ -107,6 +110,6 @@ struct SoundFocusBoostView: View {
 }
 
 #Preview {
-    SoundFocusBoostView()
+    FocusGoalSelectionView()
         .environmentObject(NavigationCoordinator())
 }

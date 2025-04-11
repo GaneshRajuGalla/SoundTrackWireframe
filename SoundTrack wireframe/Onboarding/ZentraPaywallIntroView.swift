@@ -45,7 +45,10 @@ struct ZentraPaywallIntroView: View {
                     if showDescription {
                         Text("Start your 7-day free trial.\nJust $2.49/mo. Cancel anytime.")
                             .foregroundLinearGradient(
-                                colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                stops: [
+                                    .init(color: .white, location: 0),
+                                    .init(color: Color("9A9A9A"), location: 1)
+                                ],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -104,4 +107,5 @@ struct ZentraPaywallIntroView: View {
 
 #Preview {
     ZentraPaywallIntroView()
+        .environmentObject(NavigationCoordinator())
 }

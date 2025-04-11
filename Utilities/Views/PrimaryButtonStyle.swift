@@ -18,7 +18,7 @@ struct PrimaryButtonStyle: ButtonStyle {
         .font(.system(size: 15, weight: .bold))
         .foregroundColor(Color("2A2A2A"))
         .padding(.horizontal, 20)
-        .frame(height: 52)
+        .frame(height: 68)
         .frame(maxWidth: .infinity)
         .background(
             LinearGradient(

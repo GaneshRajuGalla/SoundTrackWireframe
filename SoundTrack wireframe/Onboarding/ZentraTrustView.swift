@@ -36,7 +36,10 @@ struct ZentraTrustView: View {
                     if showDescription {
                         Text("89% of users report more\neffective focus after just\none week.")
                             .foregroundLinearGradient(
-                                colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                stops: [
+                                    .init(color: .white, location: 0),
+                                    .init(color: Color("9A9A9A"), location: 1)
+                                ],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -103,6 +106,24 @@ struct ZentraTrustView: View {
     }
 }
 
+extension Text {
+    public func foregroundLinearGradient(
+        stops: [Gradient.Stop],
+        startPoint: UnitPoint,
+        endPoint: UnitPoint
+    ) -> some View {
+        self.overlay(
+            LinearGradient(
+                gradient: Gradient(stops: stops),
+                startPoint: startPoint,
+                endPoint: endPoint
+            ).mask(self),
+            alignment: .center
+        )
+    }
+}
+
 #Preview {
     ZentraTrustView()
+        .environmentObject(NavigationCoordinator())
 }
