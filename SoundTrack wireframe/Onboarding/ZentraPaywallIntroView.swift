@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ZentraPaywallIntroView: View {
-    @State private var showImage = false
-    @State private var showTitle = false
-    @State private var showDescription = false
-    @State private var showButton = false
+    @State private var titleOpacity: Double = 0
+    @State private var titleOffset: CGFloat = -20
+    @State private var imageOpacity: Double = 0
+    @State private var imageOffset: CGFloat = -20
+    @State private var descriptionOpacity: Double = 0
+    @State private var descriptionOffset: CGFloat = -20
+    @State private var buttonOpacity: Double = 0
+    @State private var buttonOffset: CGFloat = -20
 
     var body: some View {
         ZStack {
@@ -22,84 +26,70 @@ struct ZentraPaywallIntroView: View {
 
             ContentView {
                 VStack(spacing: 0) {
-                    if showTitle {
-                        Text("We want you to try Zentra for free.")
-                            .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                    }
+                    Text("We want you to try Zentra for free.")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .opacity(titleOpacity)
+                        .offset(y: titleOffset)
+
+                    Spacer()
+                    
+                    Image("zentra_paywall")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 207)
+                        .opacity(imageOpacity)
+                        .offset(y: imageOffset)
                     
                     Spacer()
                     
-                    if showImage {
-                        Image("zentra_paywall")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 207)
-                            .transition(.opacity)
-                    }
+                    Text("Start your 7-day free trial.\nJust $2.49/mo. Cancel anytime.")
+                        .foregroundLinearGradient(
+                            stops: [
+                                .init(color: .white, location: 0),
+                                .init(color: Color("9A9A9A"), location: 1)
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                        .font(.system(size: 20))
+                        .multilineTextAlignment(.center)
+                        .opacity(descriptionOpacity)
+                        .offset(y: descriptionOffset)
                     
                     Spacer()
                     
-                    if showDescription {
-                        Text("Start your 7-day free trial.\nJust $2.49/mo. Cancel anytime.")
-                            .foregroundLinearGradient(
-                                stops: [
-                                    .init(color: .white, location: 0),
-                                    .init(color: Color("9A9A9A"), location: 1)
-                                ],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                            .font(.system(size: 20))
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
+                    Button {
+                        Utility.shared.makeDashboardRoot()
+                    } label: {
+                        Text("LET’S GET STARTED")
                     }
-                    
-                    Spacer()
-                    
-                    if showButton {
-                        Button {
-                            Utility.shared.makeDashboardRoot()
-                        } label: {
-                            Text("LET’S GET STARTED")
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
-                        .transition(.opacity)
-                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .opacity(buttonOpacity)
+                    .offset(y: buttonOffset)
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 38)
                 .padding(.top, 167)
                 .padding(.bottom, 52)
             }
         }
         .onAppear {
-            let baseDelay = 0.3
-            let animation = Animation.easeInOut(duration: 0.6)
-
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                withTransaction(Transaction(animation: animation)) {
-                    showTitle = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+                titleOpacity = 1
+                titleOffset = 0
             }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay) {
-                withTransaction(Transaction(animation: animation)) {
-                    showImage = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+                imageOpacity = 1
+                imageOffset = 0
             }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 2) {
-                withTransaction(Transaction(animation: animation)) {
-                    showDescription = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+                descriptionOpacity = 1
+                descriptionOffset = 0
             }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 3) {
-                withTransaction(Transaction(animation: animation)) {
-                    showButton = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+                buttonOpacity = 1
+                buttonOffset = 0
             }
         }
     }

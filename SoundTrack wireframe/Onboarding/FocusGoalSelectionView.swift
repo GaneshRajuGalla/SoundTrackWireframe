@@ -9,9 +9,12 @@ import SwiftUI
 
 struct FocusGoalSelectionView: View {
     @State private var selectedGoal: String? = nil
-    @State private var showTitle = false
-    @State private var showOptions = false
-    @State private var showButton = false
+    @State private var titleOpacity: Double = 0
+    @State private var titleOffset: CGFloat = -20
+    @State private var optionsOpacity: Double = 0
+    @State private var optionsOffset: CGFloat = -20
+    @State private var buttonOpacity: Double = 0
+    @State private var buttonOffset: CGFloat = -20
     @EnvironmentObject var nav: NavigationCoordinator
 
     private let options = [
@@ -31,79 +34,67 @@ struct FocusGoalSelectionView: View {
 
             ContentView {
                 VStack(spacing: 0) {
-                    if showTitle {
-                        Text("What’s your #1 focus\ngoal right now?")
-                            .font(.system(size: 28, weight: .bold))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                    }
+                    Text("What’s your #1 focus\ngoal right now?")
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .opacity(titleOpacity)
+                        .offset(y: titleOffset)
 
                     Spacer()
 
-                    if showOptions {
-                        VStack(spacing: 16) {
-                            ForEach(options, id: \.self) { option in
-                                Button {
-                                    withAnimation {
-                                        selectedGoal = option
-                                    }
-                                } label: {
-                                    Text(option)
-                                        .font(.system(size: 16, weight: .medium))
-                                        .frame(maxWidth: .infinity)
-                                        .padding(.vertical, 16)
-                                        .background(selectedGoal == option ? Color("E0D6FF") : Color.clear)
-                                        .foregroundColor(selectedGoal == option ? Color("484848") : .white)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 30)
-                                                .stroke(Color.white.opacity(0.7), lineWidth: 1)
-                                        )
-                                        .cornerRadius(30)
+                    VStack(spacing: 16) {
+                        ForEach(options, id: \.self) { option in
+                            Button {
+                                withAnimation {
+                                    selectedGoal = option
                                 }
+                            } label: {
+                                Text(option)
+                                    .font(.system(size: 16, weight: .medium))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 16)
+                                    .background(selectedGoal == option ? Color("E0D6FF") : Color.clear)
+                                    .foregroundColor(selectedGoal == option ? Color("484848") : .white)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.white.opacity(0.7), lineWidth: 1)
+                                    )
+                                    .cornerRadius(30)
                             }
                         }
-                        .transition(.opacity)
-                        .padding(.top, 10)
                     }
+                    .opacity(optionsOpacity)
+                    .offset(y: optionsOffset)
 
                     Spacer()
 
-                    if showButton {
-                        Button {
-                            nav.push(ZentraTrustView())
-                        } label: {
-                            Text("CONTINUE")
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
-                        .transition(.opacity)
+                    Button {
+                        nav.push(ZentraTrustView())
+                    } label: {
+                        Text("CONTINUE")
                     }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .opacity(buttonOpacity)
+                    .offset(y: buttonOffset)
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 38)
                 .padding(.top, 150)
                 .padding(.bottom, 52)
             }
         }
         .onAppear {
-            let baseDelay = 0.3
-            let animation = Animation.easeInOut(duration: 0.6)
-
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                withTransaction(Transaction(animation: animation)) {
-                    showTitle = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+                titleOpacity = 1
+                titleOffset = 0
             }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay) {
-                withTransaction(Transaction(animation: animation)) {
-                    showOptions = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+                optionsOpacity = 1
+                optionsOffset = 0
             }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 2) {
-                withTransaction(Transaction(animation: animation)) {
-                    showButton = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+                buttonOpacity = 1
+                buttonOffset = 0
             }
         }
     }

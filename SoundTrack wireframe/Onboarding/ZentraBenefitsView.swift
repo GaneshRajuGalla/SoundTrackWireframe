@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ZentraBenefitsView: View {
-    @State private var showTitle = false
-    @State private var showList = false
-    @State private var showBadge = false
-    @State private var showButton = false
+    @State private var titleOpacity: Double = 0
+    @State private var titleOffset: CGFloat = -20
+    @State private var listOpacity: Double = 0
+    @State private var listOffset: CGFloat = -20
+    @State private var badgeOpacity: Double = 0
+    @State private var badgeOffset: CGFloat = -20
+    @State private var buttonOpacity: Double = 0
+    @State private var buttonOffset: CGFloat = -20
     @EnvironmentObject var nav: NavigationCoordinator
 
     private let benefits = [
@@ -29,92 +33,78 @@ struct ZentraBenefitsView: View {
                 .ignoresSafeArea()
             ContentView {
                 VStack(spacing: 0) {
-                    if showTitle {
-                        Text("Here’s what you’ll unlock:")
-                            .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .transition(.opacity)
-                    }
+                    Text("Here’s what\nyou’ll unlock:")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .opacity(titleOpacity)
+                        .offset(y: titleOffset)
                     
                     Spacer()
                     
-                    if showList {
-                        VStack(alignment: .leading, spacing: 16) {
-                            ForEach(benefits, id: \.self) { item in
-                                HStack(alignment: .center, spacing: 8) {
-                                    Circle()
-                                        .foregroundColor(Color("9A9A9A"))
-                                        .frame(width: 6, height: 6)
-                                    Text(item)
-                                        .foregroundLinearGradient(
-                                            stops: [
-                                                .init(color: .white, location: 0),
-                                                .init(color: Color("9A9A9A"), location: 1)
-                                            ],
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                        )
-                                        .font(.system(size: 24))
-                                }
+                    VStack(alignment: .leading, spacing: 16) {
+                        ForEach(benefits, id: \.self) { item in
+                            HStack(alignment: .center, spacing: 8) {
+                                Circle()
+                                    .foregroundColor(Color("9A9A9A"))
+                                    .frame(width: 6, height: 6)
+                                Text(item)
+                                    .foregroundLinearGradient(
+                                        stops: [
+                                            .init(color: .white, location: 0),
+                                            .init(color: Color("9A9A9A"), location: 1)
+                                        ],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                    .font(.system(size: 24))
                             }
                         }
-                        .transition(.opacity)
                     }
+                    .opacity(listOpacity)
+                    .offset(y: listOffset)
                     
                     Spacer()
                     
-                    if showBadge {
-                        Image("best_app")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 157, height: 65)
-                            .transition(.opacity)
-                    }
+                    Image("best_app")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 157, height: 65)
+                        .opacity(badgeOpacity)
+                        .offset(y: badgeOffset)
                     
                     Spacer()
                     
-                    if showButton {
-                        Button {
-                            nav.push(ZentraPaywallIntroView())
-                        } label: {
-                            Text("LET’S GET STARTED")
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
-                        .transition(.opacity)
+                    Button {
+                        nav.push(ZentraPaywallIntroView())
+                    } label: {
+                        Text("LET’S GET STARTED")
                     }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .opacity(buttonOpacity)
+                    .offset(y: buttonOffset)
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 38)
                 .padding(.top, 200)
                 .padding(.bottom, 52)
             }
         }
         .onAppear {
-            let baseDelay = 0.3
-            let animation = Animation.easeInOut(duration: 0.6)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                withTransaction(Transaction(animation: animation)) {
-                    showTitle = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+                titleOpacity = 1
+                titleOffset = 0
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay) {
-                withTransaction(Transaction(animation: animation)) {
-                    showList = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+                listOpacity = 1
+                listOffset = 0
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 2) {
-                withTransaction(Transaction(animation: animation)) {
-                    showBadge = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+                badgeOpacity = 1
+                badgeOffset = 0
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + baseDelay * 3) {
-                withTransaction(Transaction(animation: animation)) {
-                    showButton = true
-                }
+            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+                buttonOpacity = 1
+                buttonOffset = 0
             }
         }
     }
