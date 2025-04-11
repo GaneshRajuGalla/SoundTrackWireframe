@@ -17,6 +17,7 @@
 		6E19EB292DA91D5700A2EFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB282DA91D5700A2EFC2 /* ContentView.swift */; };
 		6E19EB2B2DA91E8600A2EFC2 /* SoundFocusBoostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */; };
 		6E19EB2D2DA9200A00A2EFC2 /* MeetZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */; };
+		6E19EB2F2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */; };
 		6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49E2492DA8C67600532675 /* Colors.xcassets */; };
 		6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
@@ -225,6 +226,7 @@
 		6E19EB282DA91D5700A2EFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFocusBoostView.swift; sourceTree = "<group>"; };
 		6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetZentraView.swift; sourceTree = "<group>"; };
+		6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZentraPaywallIntroView.swift; sourceTree = "<group>"; };
 		6E49E2492DA8C67600532675 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraView.swift; sourceTree = "<group>"; };
 		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				6E19EB262DA91A5D00A2EFC2 /* FocusChallengeView.swift */,
 				6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */,
 				6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */,
+				6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1378,6 +1381,7 @@
 				7051BA6B2A31F42400D97E82 /* SelectEmotionTypeVC.swift in Sources */,
 				709E02FE2A497930007AC5CF /* DispatchQueueType.swift in Sources */,
 				70DF6BE42A8F523100EF93A5 /* NotificationDelegate.swift in Sources */,
+				6E19EB2F2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift in Sources */,
 				703D16262A270AF600E455B2 /* GoogleSignInHandler.swift in Sources */,
 				7084C6772A9F627700988762 /* SubFooterView.swift in Sources */,
 				844B44C92D8DF87B00470202 /* OnboardingFourViewController.swift in Sources */,
