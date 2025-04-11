@@ -22,7 +22,7 @@ struct WelcomeToZentraView: View {
                 .ignoresSafeArea()
             
             ContentView {
-                VStack(spacing: 70) {
+                VStack(spacing: 0) {
                     if showImage {
                         Image("zentra_illustration")
                             .resizable()
@@ -31,6 +31,8 @@ struct WelcomeToZentraView: View {
                             .transition(.opacity)
                     }
                     
+                    Spacer()
+                    
                     if showTitle {
                         Text("Welcome to Zentra")
                             .font(.system(size: 38, weight: .bold))
@@ -38,6 +40,8 @@ struct WelcomeToZentraView: View {
                             .multilineTextAlignment(.center)
                             .transition(.opacity)
                     }
+                    
+                    Spacer()
                     
                     if showDescription {
                         Text("You’ve made a powerful\ndecision to take control of\nyour focus and productivity.")
@@ -64,7 +68,8 @@ struct WelcomeToZentraView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 52)
+                .padding(.top, 199)
+                .padding(.bottom, 52)
             }
         }
         .onAppear {

@@ -21,7 +21,7 @@ struct ZentraPaywallIntroView: View {
                 .ignoresSafeArea()
 
             ContentView {
-                VStack(spacing: 70) {
+                VStack(spacing: 0) {
                     if showTitle {
                         Text("We want you to try Zentra for free.")
                             .font(.system(size: 32, weight: .bold))
@@ -30,6 +30,8 @@ struct ZentraPaywallIntroView: View {
                             .transition(.opacity)
                     }
                     
+                    Spacer()
+                    
                     if showImage {
                         Image("zentra_paywall")
                             .resizable()
@@ -37,6 +39,8 @@ struct ZentraPaywallIntroView: View {
                             .frame(width: 200, height: 207)
                             .transition(.opacity)
                     }
+                    
+                    Spacer()
                     
                     if showDescription {
                         Text("Start your 7-day free trial.\nJust $2.49/mo. Cancel anytime.")
@@ -54,7 +58,7 @@ struct ZentraPaywallIntroView: View {
                     
                     if showButton {
                         Button {
-                            // handle continue action
+                            Utility.shared.makeDashboardRoot()
                         } label: {
                             Text("LET’S GET STARTED")
                         }
@@ -63,7 +67,8 @@ struct ZentraPaywallIntroView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 52)
+                .padding(.top, 167)
+                .padding(.bottom, 52)
             }
         }
         .onAppear {

@@ -1,5 +1,5 @@
 //
-//  FocusChallengeView.swift
+//  ZentraTrustView.swift
 //  SoundTrack wireframe
 //
 //  Created by Kuldeep on 11/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FocusChallengeView: View {
+struct ZentraTrustView: View {
     @State private var showImage = false
     @State private var showTitle = false
     @State private var showDescription = false
@@ -24,7 +24,7 @@ struct FocusChallengeView: View {
             ContentView {
                 VStack(spacing: 0) {
                     if showTitle {
-                        Text("It’s harder than\never to focus.")
+                        Text("Trusted by thousands.")
                             .font(.system(size: 32, weight: .bold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
@@ -33,51 +33,42 @@ struct FocusChallengeView: View {
                     
                     Spacer()
                     
-                    if showImage {
-                        Image("zentra_focus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 215)
+                    if showDescription {
+                        Text("89% of users report more\neffective focus after just\none week.")
+                            .foregroundLinearGradient(
+                                colors: [Color("9A9A9A"), Color("E5E5E5")],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                            .font(.system(size: 20))
+                            .multilineTextAlignment(.center)
                             .transition(.opacity)
                     }
                     
                     Spacer()
                     
-                    if showDescription {
-                        VStack(spacing: 10) {
-                            Text("Distractions are everywhere.")
-                                .foregroundLinearGradient(
-                                    colors: [Color("9A9A9A"), Color("E5E5E5")],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            
-                            Text("Zentra is your tool to reclaim your time and energy.")
-                                .foregroundLinearGradient(
-                                    colors: [Color("9A9A9A"), Color("E5E5E5")],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                        }
-                        .font(.system(size: 20))
-                        .multilineTextAlignment(.center)
-                        .transition(.opacity)
+                    if showImage {
+                        Image("best_app")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 157, height: 65)
+                            .transition(.opacity)
                     }
                     
                     Spacer()
                     
                     if showButton {
                         Button {
-                            nav.push(SoundFocusBoostView())
+                            nav.push(ZentraBenefitsView())
                         } label: {
-                            Text("CONTINUE")
+                            Text("LET’S GET STARTED")
                         }
                         .buttonStyle(PrimaryButtonStyle())
                         .transition(.opacity)
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 150)
+                .padding(.top, 200)
                 .padding(.bottom, 52)
             }
         }
@@ -113,5 +104,5 @@ struct FocusChallengeView: View {
 }
 
 #Preview {
-    FocusChallengeView()
+    ZentraTrustView()
 }

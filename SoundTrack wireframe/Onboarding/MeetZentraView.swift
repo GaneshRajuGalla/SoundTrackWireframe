@@ -12,6 +12,7 @@ struct MeetZentraView: View {
     @State private var showTitle = false
     @State private var showDescription = false
     @State private var showButton = false
+    @EnvironmentObject var nav: NavigationCoordinator
 
     var body: some View {
         ZStack {
@@ -21,7 +22,7 @@ struct MeetZentraView: View {
                 .ignoresSafeArea()
 
             ContentView {
-                VStack(spacing: 70) {
+                VStack(spacing: 0) {
                     if showTitle {
                         Text("Meet Zentra")
                             .font(.system(size: 32, weight: .bold))
@@ -30,6 +31,8 @@ struct MeetZentraView: View {
                             .transition(.opacity)
                     }
                     
+                    Spacer()
+                    
                     if showImage {
                         Image("meet_zentra")
                             .resizable()
@@ -37,6 +40,8 @@ struct MeetZentraView: View {
                             .frame(width: 200, height: 207)
                             .transition(.opacity)
                     }
+                    
+                    Spacer()
                     
                     if showDescription {
                         Text("Personalized soundscapes and a\nsmart focus timer designed to help\nyou enter flow state—fast.")
@@ -54,7 +59,7 @@ struct MeetZentraView: View {
                     
                     if showButton {
                         Button {
-                            // handle continue action
+                            nav.push(ZentraTrustView())
                         } label: {
                             Text("CONTINUE")
                         }
@@ -63,7 +68,8 @@ struct MeetZentraView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 52)
+                .padding(.top, 150)
+                .padding(.bottom, 52)
             }
         }
         .onAppear {

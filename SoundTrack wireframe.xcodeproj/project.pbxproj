@@ -18,6 +18,8 @@
 		6E19EB2B2DA91E8600A2EFC2 /* SoundFocusBoostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */; };
 		6E19EB2D2DA9200A00A2EFC2 /* MeetZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */; };
 		6E19EB2F2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */; };
+		6E19EB312DA92D1700A2EFC2 /* ZentraTrustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB302DA92D1700A2EFC2 /* ZentraTrustView.swift */; };
+		6E19EB332DA930C000A2EFC2 /* ZentraBenefitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19EB322DA930C000A2EFC2 /* ZentraBenefitsView.swift */; };
 		6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49E2492DA8C67600532675 /* Colors.xcassets */; };
 		6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
@@ -227,6 +229,8 @@
 		6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFocusBoostView.swift; sourceTree = "<group>"; };
 		6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetZentraView.swift; sourceTree = "<group>"; };
 		6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZentraPaywallIntroView.swift; sourceTree = "<group>"; };
+		6E19EB302DA92D1700A2EFC2 /* ZentraTrustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZentraTrustView.swift; sourceTree = "<group>"; };
+		6E19EB322DA930C000A2EFC2 /* ZentraBenefitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZentraBenefitsView.swift; sourceTree = "<group>"; };
 		6E49E2492DA8C67600532675 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraView.swift; sourceTree = "<group>"; };
 		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
@@ -463,6 +467,8 @@
 				6E19EB2A2DA91E8600A2EFC2 /* SoundFocusBoostView.swift */,
 				6E19EB2C2DA9200A00A2EFC2 /* MeetZentraView.swift */,
 				6E19EB2E2DA92BCC00A2EFC2 /* ZentraPaywallIntroView.swift */,
+				6E19EB302DA92D1700A2EFC2 /* ZentraTrustView.swift */,
+				6E19EB322DA930C000A2EFC2 /* ZentraBenefitsView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1399,6 +1405,7 @@
 				709E02D52A4978BE007AC5CF /* AudioSession.swift in Sources */,
 				703D16162A27092A00E455B2 /* UITable+extension.swift in Sources */,
 				703D15D22A27075F00E455B2 /* AppDelegate.swift in Sources */,
+				6E19EB332DA930C000A2EFC2 /* ZentraBenefitsView.swift in Sources */,
 				70ABB65E2A37170700BA455A /* UserModel.swift in Sources */,
 				70ABB65C2A37000600BA455A /* Utility.swift in Sources */,
 				7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */,
@@ -1407,6 +1414,7 @@
 				6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */,
 				703D16172A27092A00E455B2 /* UITabbar+extension.swift in Sources */,
 				70683A452A3B41E1009D5129 /* SideMenuCell.swift in Sources */,
+				6E19EB312DA92D1700A2EFC2 /* ZentraTrustView.swift in Sources */,
 				709E02F32A497902007AC5CF /* AVPlayerTimeObserver.swift in Sources */,
 				709E02E92A4978EF007AC5CF /* NowPlayingInfoProperty.swift in Sources */,
 				6BCEAD912AAAE61000DA5213 /* APIManager.swift in Sources */,

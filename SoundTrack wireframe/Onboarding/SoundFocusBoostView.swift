@@ -22,7 +22,7 @@ struct SoundFocusBoostView: View {
                 .ignoresSafeArea()
 
             ContentView {
-                VStack(spacing: 70) {
+                VStack(spacing: 0) {
                     if showTitle {
                         Text("The right sound\nhelps you focus.")
                             .font(.system(size: 32, weight: .bold))
@@ -31,6 +31,8 @@ struct SoundFocusBoostView: View {
                             .transition(.opacity)
                     }
                     
+                    Spacer()
+                    
                     if showImage {
                         Image("zentra_sound")
                             .resizable()
@@ -38,6 +40,8 @@ struct SoundFocusBoostView: View {
                             .frame(width: 200, height: 207)
                             .transition(.opacity)
                     }
+                    
+                    Spacer()
                     
                     if showDescription {
                         Text("Research shows the right sound\nfrequencies can boost attention\nand reduce mental fatigue.")
@@ -64,7 +68,8 @@ struct SoundFocusBoostView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 52)
+                .padding(.top, 150)
+                .padding(.bottom, 52)
             }
         }
         .onAppear {
