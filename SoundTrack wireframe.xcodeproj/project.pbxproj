@@ -13,6 +13,8 @@
 		6BCEAD932AAAE62A00DA5213 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */; };
 		6BCEAD952AAAE74400DA5213 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */; };
 		6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E0FA76E2DA5136C007F9402 /* SuperwallKit */; };
+		6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49E2492DA8C67600532675 /* Colors.xcassets */; };
+		6E53AF472DA8661500B55FBE /* WelcomeToZentraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
 		7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012811C2A32E34F0066C50C /* HowLongCell.swift */; };
 		7012811F2A32E34F0066C50C /* HowLongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012811D2A32E34F0066C50C /* HowLongCell.xib */; };
@@ -213,6 +215,8 @@
 		6BCEAD902AAAE61000DA5213 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6BCEAD922AAAE62A00DA5213 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		6BCEAD942AAAE74400DA5213 /* SubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVC.swift; sourceTree = "<group>"; };
+		6E49E2492DA8C67600532675 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraVC.swift; sourceTree = "<group>"; };
 		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		6F2AE3886F5619DF78E56C8C /* Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoundTrack wireframe-SoundTrack wireframeUITests/Pods-SoundTrack wireframe-SoundTrack wireframeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7012811C2A32E34F0066C50C /* HowLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowLongCell.swift; sourceTree = "<group>"; };
@@ -437,6 +441,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E53AF452DA8659000B55FBE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6E53AF462DA8661500B55FBE /* WelcomeToZentraVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		6E85D88B2DA70F15008BA122 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +498,7 @@
 		703D15C52A27075F00E455B2 = {
 			isa = PBXGroup;
 			children = (
+				6E49E2492DA8C67600532675 /* Colors.xcassets */,
 				6E85D88B2DA70F15008BA122 /* Utilities */,
 				846E6FD42D8F7D77008DFA22 /* Kumbh_Sans */,
 				703D15D02A27075F00E455B2 /* SoundTrack wireframe */,
@@ -512,6 +525,7 @@
 		703D15D02A27075F00E455B2 /* SoundTrack wireframe */ = {
 			isa = PBXGroup;
 			children = (
+				6E53AF452DA8659000B55FBE /* Onboarding */,
 				708A96F22A39A42B0093128D /* SoundTrack wireframe.entitlements */,
 				703D15D12A27075F00E455B2 /* AppDelegate.swift */,
 				703D15D32A27075F00E455B2 /* SceneDelegate.swift */,
@@ -1124,6 +1138,7 @@
 				709E84952A3ADB8F007D2F4F /* MusicPopupMixView.xib in Resources */,
 				7051BA602A31EE3900D97E82 /* GT-Alpina-Condensed-Bold-Trial.otf in Resources */,
 				70C1A0412A9C754A003F2D03 /* HowLongDing.wav in Resources */,
+				6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */,
 				7056B89B2A553D8200E338E8 /* Hang Out.mp4 in Resources */,
 				70683A462A3B41E1009D5129 /* SideMenuCell.xib in Resources */,
 				701281212A32E4E20066C50C /* Manrope-SemiBold.ttf in Resources */,
@@ -1284,6 +1299,7 @@
 				703D16132A27092A00E455B2 /* Dictionary+extensions.swift in Sources */,
 				703D161C2A27097E00E455B2 /* NetworkCall.swift in Sources */,
 				704D9E9A2A41CC090085E82E /* MediaViewModel.swift in Sources */,
+				6E53AF472DA8661500B55FBE /* WelcomeToZentraVC.swift in Sources */,
 				7092D0512A38579C0066D8AE /* HistoryCell.swift in Sources */,
 				7063FE252A9F74FC0063D03F /* SubscriptionBenefitsCell.swift in Sources */,
 				709E02F42A497902007AC5CF /* AVPlayerItemObserver.swift in Sources */,
