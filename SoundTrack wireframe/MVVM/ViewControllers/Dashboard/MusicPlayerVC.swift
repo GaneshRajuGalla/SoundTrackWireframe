@@ -118,12 +118,8 @@ class MusicPlayerVC: UIViewController {
     @IBAction func btnBackAction(_ sender: UIButton){
         self.mediaVm.disconnectMusic()
         Utility.shared.appSessionCount += 1
-        if Utility.shared.getCurrentUserToken() == ""{
-            Utility.shared.makeWelcomeRoot()
-        }else{
-            Utility.shared.fireNotification(.backToCategories, object: self.mediaVm, userInfo: [:])
-            self.popToSubCategories()
-        }
+        Utility.shared.fireNotification(.backToCategories, object: self.mediaVm, userInfo: [:])
+        self.popToSubCategories()
     }
     
     private func setUpMusicPlayer(){
