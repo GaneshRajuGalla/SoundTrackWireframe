@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SuperwallKit
 
 struct ZentraPaywallIntroView: View {
     @State private var titleOpacity: Double = 0
@@ -16,6 +17,7 @@ struct ZentraPaywallIntroView: View {
     @State private var descriptionOffset: CGFloat = -20
     @State private var buttonOpacity: Double = 0
     @State private var buttonOffset: CGFloat = -20
+    @EnvironmentObject var nav: NavigationCoordinator
 
     var body: some View {
         ZStack {
@@ -61,7 +63,7 @@ struct ZentraPaywallIntroView: View {
                     Spacer()
                     
                     Button {
-                        Utility.shared.makeDashboardRoot()
+                        getStartedAction()
                     } label: {
                         Text("LET’S GET STARTED")
                     }
@@ -91,6 +93,90 @@ struct ZentraPaywallIntroView: View {
                 buttonOpacity = 1
                 buttonOffset = 0
             }
+        }
+    }
+}
+
+extension ZentraPaywallIntroView {
+    
+    private func getStartedAction() {
+        switch Superwall.shared.subscriptionStatus {
+        case .unknown:
+            self.showToast(message: "⏳ Checking subscription status...")
+
+        case .inactive:
+            Superwall.shared.register(placement: "onboarding_completed", handler: createPaywallHandler())
+
+        case .active:
+            UserDefaultManager.shared.set(true, for: .isSubscribed)
+            navigateToRoot()
+        }
+    }
+    
+    private func createPaywallHandler() -> PaywallPresentationHandler {
+        let handler = PaywallPresentationHandler()
+
+        handler.onPresent { paywallInfo in
+            print("✅ Paywall presented with ID: \(paywallInfo.identifier)")
+        }
+
+        handler.onSkip { reason in
+            switch reason {
+            case .noRuleMatch:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
+                self.showToast(message: "✅ You're already subscribed. Unlocking feature...")
+                self.navigateToRoot()
+
+            case .holdout:
+                self.showToast(message: "🚫 You're in a holdout group. No paywall will be shown.")
+
+            case .eventNotFound:
+                self.showToast(message: "⚠️ Paywall placement not found. Please contact support.")
+
+            case .noAudienceMatch:
+                self.showToast(message: "🚫 You don’t meet the criteria for this offer.")
+
+            case .placementNotFound:
+                self.showToast(message: "❌ Invalid placement identifier used.")
+
+            @unknown default:
+                self.showToast(message: "❓ Paywall skipped due to unknown reason.")
+            }
+        }
+
+        handler.onDismiss { _, result in
+            switch result {
+            case .purchased:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
+                self.showToast(message: "🎉 Subscription successful!")
+                self.navigateToRoot()
+
+            case .restored:
+                UserDefaultManager.shared.set(true, for: .isSubscribed)
+                self.showToast(message: "🔄 Subscription restored.")
+                self.navigateToRoot()
+
+            case .declined:
+                self.showToast(message: "🔒 Paywall closed. Subscription required to proceed.")
+            }
+        }
+
+        handler.onError { error in
+            self.showToast(message: "❌ Failed to show paywall: \(error.localizedDescription)")
+        }
+
+        return handler
+    }
+    
+    private func navigateToRoot() {
+        DispatchQueue.main.async {
+            Utility.shared.makeDashboardRoot()
+        }
+    }
+    
+    private func showToast(message: String) {
+        if let topVC = UIApplication.shared.topMostViewController() {
+            topVC.showToast(message: message)
         }
     }
 }
