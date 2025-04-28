@@ -53,22 +53,23 @@ class AVPlayerWrapper: AVPlayerWrapperProtocol {
 
     fileprivate(set) var playbackError: AudioPlayerError.PlaybackError? = nil
     
-    var _state: AVPlayerWrapperState = AVPlayerWrapperState.idle
+    private var _state: AVPlayerWrapperState = .idle
+
     var state: AVPlayerWrapperState {
         get {
-            var state: AVPlayerWrapperState!
-            stateQueue.sync {
-                state = _state
+            return stateQueue.sync {
+                return _state
             }
-            return state
         }
         set {
             stateQueue.async(flags: .barrier) { [weak self] in
                 guard let self = self else { return }
                 let currentState = self._state
-                if (currentState != newValue) {
+                if currentState != newValue {
                     self._state = newValue
-                    self.delegate?.AVWrapper(didChangeState: newValue)
+                    DispatchQueue.main.async {
+                        self.delegate?.AVWrapper(didChangeState: newValue)
+                    }
                 }
             }
         }
