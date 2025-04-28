@@ -24,6 +24,7 @@ class AVPlayerWrapper: AVPlayerWrapperProtocol {
     // MARK: - Properties
     
     fileprivate var avPlayer = AVPlayer()
+    static let shared = AVPlayerWrapper()
     private let playerObserver = AVPlayerObserver()
     internal let playerTimeObserver: AVPlayerTimeObserver
     private let playerItemNotificationObserver = AVPlayerItemNotificationObserver()
@@ -187,9 +188,14 @@ class AVPlayerWrapper: AVPlayerWrapperProtocol {
     }
     
     func stop() {
-        state = .stopped
-        clearCurrentItem()
         playWhenReady = false
+        avPlayer.pause()
+        avPlayer.replaceCurrentItem(with: nil)
+        clearCurrentItem()
+        playerObserver.stopObserving()
+        playerTimeObserver.unregisterForBoundaryTimeEvents()
+        playerTimeObserver.unregisterForPeriodicEvents()
+        state = .stopped
     }
     
     func seek(to seconds: TimeInterval) {
@@ -407,6 +413,10 @@ class AVPlayerWrapper: AVPlayerWrapperProtocol {
     
     private func applyAVPlayerRate() {
         avPlayer.rate = playWhenReady ? _rate : 0
+    }
+    
+    deinit {
+        print("AVPlayerWrapper deinitialized")
     }
 }
 
