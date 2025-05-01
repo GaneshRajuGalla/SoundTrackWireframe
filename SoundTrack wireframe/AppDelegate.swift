@@ -12,6 +12,7 @@ import GoogleSignIn
 import FacebookCore
 import UserNotifications
 import SwiftyStoreKit
+import RevenueCat
 import SuperwallKit
 
 @main
@@ -26,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.configureWithFacebook(application, didFinishLaunchingWithOptions: launchOptions)
         setUpIAP()
         Superwall.configure(apiKey: "pk_806cc665da24c587361b61e409578720facf30e42a8d4170")
+        Purchases.configure(with: .builder(withAPIKey: "appl_KZbQpcKgWxTrzSlKuSGJQLKhfZt")
+            .with(purchasesAreCompletedBy: .myApp, storeKitVersion: .storeKit2)
+            .build()
+        )
 //        self.configureNotifications()
         return true
     }

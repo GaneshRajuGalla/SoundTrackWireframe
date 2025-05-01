@@ -11,6 +11,7 @@ import UIKit
 import SwiftyJSON
 import SVProgressHUD
 import SuperwallKit
+import RevenueCat
 
 enum MenuOptions : String,CaseIterable{
     case login          = "Sign In"
@@ -85,6 +86,7 @@ extension SideMenuVC: UITableViewDelegate & UITableViewDataSource{
                     Utility.shared.deleteCurrentUserDetails()
                     Utility.shared.makeWelcomeRoot()
                     Superwall.shared.reset()
+                    Purchases.shared.logOut()
                 }
             }
         }else if menuOptions[indexPath.row] == .privacyPolicy{

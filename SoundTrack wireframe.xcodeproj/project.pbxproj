@@ -24,6 +24,7 @@
 		6E49E24A2DA8C67700532675 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49E2492DA8C67600532675 /* Colors.xcassets */; };
 		6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
+		6ECCE1382DC3426C0087C34D /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 6ECCE1372DC3426C0087C34D /* RevenueCat */; };
 		6EF4A1372DA9126600801C3E /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */; };
 		6EF4A13B2DA913A600801C3E /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A13A2DA913A600801C3E /* Text+Extension.swift */; };
 		7012811E2A32E34F0066C50C /* HowLongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7012811C2A32E34F0066C50C /* HowLongCell.swift */; };
@@ -407,6 +408,7 @@
 			files = (
 				6E0FA76F2DA5136C007F9402 /* SuperwallKit in Frameworks */,
 				1F0FACC41C4A1316F4F2B9AB /* Pods_SoundTrack_wireframe.framework in Frameworks */,
+				6ECCE1382DC3426C0087C34D /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,6 +1148,7 @@
 			mainGroup = 703D15C52A27075F00E455B2;
 			packageReferences = (
 				6E0FA76D2DA5136C007F9402 /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+				6ECCE1362DC3426C0087C34D /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 703D15CF2A27075F00E455B2 /* Products */;
 			projectDirPath = "";
@@ -1939,6 +1942,14 @@
 				minimumVersion = 4.0.6;
 			};
 		};
+		6ECCE1362DC3426C0087C34D /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.22.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1946,6 +1957,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E0FA76D2DA5136C007F9402 /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
 			productName = SuperwallKit;
+		};
+		6ECCE1372DC3426C0087C34D /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6ECCE1362DC3426C0087C34D /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 

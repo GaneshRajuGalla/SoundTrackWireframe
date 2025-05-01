@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SuperwallKit
+import RevenueCat
 
 enum LoginTypes: String
 {
@@ -62,6 +63,11 @@ class AuthViewModel
                 Logger.log(value)
                 Superwall.shared.identify(userId: socialId)
                 Superwall.shared.setUserAttributes(["fullName": name])
+                Purchases.shared.logIn(socialId) { customerInfo, created, error in
+                    if let error = error {
+                        print("RevenueCat logIn failed: \(error.localizedDescription)")
+                    }
+                }
                 if let response = value as? [String: Any]
                 {
                     let statusCode = response["status"] as? Int ?? 0
