@@ -19,15 +19,15 @@ struct ZentraBenefitsView: View {
     @EnvironmentObject var nav: NavigationCoordinator
 
     private let benefits = [
-        "Focus music",
-        "Soundscapes",
-        "Focus timers",
-        "Ad-free, HD music"
+        "Focus-enhancing music",
+        "Ambient soundscapes",
+        "Built-in focus timers",
+        "HD music with zero ads"
     ]
 
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("BG2")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -90,19 +90,19 @@ struct ZentraBenefitsView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.0)) {
                 titleOpacity = 1
                 titleOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.2)) {
                 listOpacity = 1
                 listOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.4)) {
                 badgeOpacity = 1
                 badgeOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.6)) {
                 buttonOpacity = 1
                 buttonOffset = 0
             }

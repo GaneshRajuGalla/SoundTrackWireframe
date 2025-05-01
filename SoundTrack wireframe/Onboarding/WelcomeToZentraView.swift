@@ -20,7 +20,7 @@ struct WelcomeToZentraView: View {
 
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("BG2")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -37,7 +37,7 @@ struct WelcomeToZentraView: View {
                     Spacer()
                     
                     Text("Welcome to Zentra")
-                        .font(.system(size: 38, weight: .bold))
+                        .font(.system(size: 37, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)
@@ -45,7 +45,7 @@ struct WelcomeToZentraView: View {
                     
                     Spacer()
                     
-                    Text("You’ve made a powerful\ndecision to take control of\nyour focus and productivity.")
+                    Text("You’ve made a powerful decision to take control of your focus and productivity.")
                         .foregroundLinearGradient(
                             stops: [
                                 .init(color: .white, location: 0),
@@ -76,19 +76,19 @@ struct WelcomeToZentraView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+            withAnimation(Animation.easeOut(duration: 0.5).delay(0.0)) {
                 imageOpacity = 1
                 imageOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.5).delay(0.2)) {
                 titleOpacity = 1
                 titleOffset = 0;
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+            withAnimation(Animation.easeOut(duration: 0.5).delay(0.4)) {
                 descOpacity = 1
                 descOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+            withAnimation(Animation.easeOut(duration: 0.5).delay(0.6)) {
                 buttonOpacity = 1
                 buttonOffset = 0
             }

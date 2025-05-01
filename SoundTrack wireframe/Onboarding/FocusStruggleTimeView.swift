@@ -26,7 +26,7 @@ struct FocusStruggleTimeView: View {
 
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("BG2")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -84,15 +84,15 @@ struct FocusStruggleTimeView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.0)) {
                 titleOpacity = 1
                 titleOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.2)) {
                 optionsOpacity = 1
                 optionsOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.4)) {
                 buttonOpacity = 1
                 buttonOffset = 0
             }

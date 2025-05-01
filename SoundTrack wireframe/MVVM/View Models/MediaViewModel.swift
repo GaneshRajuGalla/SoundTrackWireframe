@@ -119,6 +119,8 @@ class MediaViewModel: NSObject
     
     func configureWith(categoryName: String = "Focus", subCategory: String, tags: [String],minutes: Int,holderView: UIView? = nil,musicView: MusicPopupView? = nil,media: [MediaModel] = [])
     {
+        Logger.log("Configuring new session - Category: \(categoryName), Minutes: \(minutes)")
+        Logger.log("Current state - mediaList count: \(mediaList.count), currentPlayingIndex: \(currentPlayingIndex)")
         self.controlCenterManager = ControlCentreManger(delegate: self, musicView: musicView)
         self.tags = tags
         self.viewPlayerHolder = holderView
@@ -341,6 +343,7 @@ class MediaViewModel: NSObject
     
     private func playAudioInQueue()
     {
+        Logger.log("Setting up audio queue - Number of items: \(mediaList.count)")
         self.audioPlayer.clear()
         let allAudios = self.mediaList.compactMap({ URL(string: $0.audio?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") })
         var items = [DefaultAudioItem]()
@@ -543,6 +546,7 @@ class MediaViewModel: NSObject
     }
 
     func disconnectMusic(){
+        Logger.log("Disconnecting music - Starting cleanup")
         if let timerCountdown{
             timerCountdown.invalidate()
             self.timerCountdown = nil
@@ -554,11 +558,11 @@ class MediaViewModel: NSObject
         self.audioPlayer.clear()
         self.playerItems.removeAll()
         self.observer = nil
-//        if #available(iOS 16.2, *) {
-//            LiveActivityHandler.sharedInstance.endActivity()
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        self.mediaList.removeAll()  // Clear the media list
+        self.currentPlayingIndex = 0  // Reset the playing index
+        self.currentSeconds = 0  // Reset the timer
+        self.loopMode = false  // Reset loop mode
+        Logger.log("Disconnecting music - Cleanup complete")
     }
     
     func updateNowPlaying(isPause: Bool,seconds: Double? = nil){
@@ -572,6 +576,16 @@ class MediaViewModel: NSObject
 //        } else {
 //            // Fallback on earlier versions
 //        }
+    }
+    
+    func checkAudioPlayerState() {
+        Logger.log("Audio Player State Check:")
+        Logger.log("Current Index: \(audioPlayer.currentIndex)")
+        Logger.log("Total Items: \(audioPlayer.items.count)")
+        Logger.log("Player State: \(audioPlayer.playerState)")
+        Logger.log("Repeat Mode: \(audioPlayer.repeatMode)")
+        Logger.log("Current Time: \(audioPlayer.currentTime)")
+        Logger.log("Duration: \(audioPlayer.duration)")
     }
     
 }
@@ -612,10 +626,7 @@ extension MediaViewModel: AVPlayerWrapperDelegate{
     }
     
     func AVWrapperItemDidPlayToEndTime() {
-        print("Music Ended !!")
-        if !loopMode{
-            self.audioPlayer.next()
-        }
+        Logger.log("Music Ended - Current index: \(audioPlayer.currentIndex), Total items: \(audioPlayer.items.count)")
     }
 
     func AVWrapper(secondsElapsed seconds: Double) {

@@ -20,7 +20,7 @@ struct ZentraTrustView: View {
 
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("BG2")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -36,7 +36,7 @@ struct ZentraTrustView: View {
 
                     Spacer()
                     
-                    Text("89% of users report more\neffective focus after just\none week.")
+                    Text("89% of users report more effective focus after just one week.")
                         .foregroundLinearGradient(
                             stops: [
                                 .init(color: .white, location: 0),
@@ -77,19 +77,19 @@ struct ZentraTrustView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.0)) {
                 titleOpacity = 1
                 titleOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.2)) {
                 descriptionOpacity = 1
                 descriptionOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.4)) {
                 imageOpacity = 1
                 imageOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.6)) {
                 buttonOpacity = 1
                 buttonOffset = 0
             }

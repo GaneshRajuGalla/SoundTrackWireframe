@@ -21,7 +21,7 @@ struct ZentraPaywallIntroView: View {
 
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("BG2")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -29,7 +29,7 @@ struct ZentraPaywallIntroView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("We want you to try Zentra for free.")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.system(size: 34, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)
@@ -77,19 +77,19 @@ struct ZentraPaywallIntroView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.0)) {
                 titleOpacity = 1
                 titleOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.2)) {
                 imageOpacity = 1
                 imageOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.0)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.4)) {
                 descriptionOpacity = 1
                 descriptionOffset = 0
             }
-            withAnimation(Animation.easeOut(duration: 0.6).delay(1.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.6)) {
                 buttonOpacity = 1
                 buttonOffset = 0
             }
