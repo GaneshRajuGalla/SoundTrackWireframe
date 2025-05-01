@@ -86,7 +86,9 @@ extension SideMenuVC: UITableViewDelegate & UITableViewDataSource{
                     Utility.shared.deleteCurrentUserDetails()
                     Utility.shared.makeWelcomeRoot()
                     Superwall.shared.reset()
-                    Purchases.shared.logOut()
+                    Task {
+                        try? await Purchases.shared.logOut()
+                    }
                 }
             }
         }else if menuOptions[indexPath.row] == .privacyPolicy{
@@ -133,4 +135,3 @@ extension SideMenuVC{
         }
     }
 }
-
