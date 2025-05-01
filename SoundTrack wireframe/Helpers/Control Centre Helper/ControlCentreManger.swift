@@ -34,13 +34,13 @@ class ControlCentreManger : NSObject
 #else
         // Define Now Playing Info
         var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = "Soundtrack"
+        nowPlayingInfo[MPMediaItemPropertyTitle] = "Zentra"
         nowPlayingInfo[MPMediaItemPropertyArtist] = name
 //        Logger.log("Audio total Duration: \(audioPlayer.duration)")
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = elapsedTime
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = fullDuration//minutes * 60
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = rate
-        if let image = UIImage(named: "app_logo") {
+        if let image = UIImage.currentAppIcon {
             nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { size in
                 return image
             }
