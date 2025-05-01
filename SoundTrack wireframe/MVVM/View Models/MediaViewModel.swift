@@ -355,10 +355,11 @@ class MediaViewModel: NSObject
 
         }
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default,options: [.allowAirPlay,.allowBluetooth])
-        }
-        catch {
-            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth])
+            try session.setActive(true) 
+        } catch {
+            print("Failed to activate AVAudioSession: \(error)")
         }
         self.audioPlayer.repeatMode = .queue
         self.audioPlayer.add(items: items, playWhenReady: viewPlayerHolder != nil)
@@ -627,6 +628,9 @@ extension MediaViewModel: AVPlayerWrapperDelegate{
     
     func AVWrapperItemDidPlayToEndTime() {
         Logger.log("Music Ended - Current index: \(audioPlayer.currentIndex), Total items: \(audioPlayer.items.count)")
+        DispatchQueue.main.async {
+            self.playNext()
+        }
     }
 
     func AVWrapper(secondsElapsed seconds: Double) {
