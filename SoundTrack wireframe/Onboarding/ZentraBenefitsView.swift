@@ -34,7 +34,7 @@ struct ZentraBenefitsView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("Here’s what\nyou’ll unlock:")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

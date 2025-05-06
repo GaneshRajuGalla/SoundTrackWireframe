@@ -37,7 +37,7 @@ struct WelcomeToZentraView: View {
                     Spacer()
                     
                     Text("Welcome to Zentra")
-                        .font(.system(size: 37, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)
@@ -63,6 +63,9 @@ struct WelcomeToZentraView: View {
                     
                     Button {
                         nav.push(FocusChallengeView())
+//                        DispatchQueue.main.async {
+//                            Utility.shared.makeDashboardRoot()
+//                        }
                     } label: {
                         Text("CONTINUE")
                     }

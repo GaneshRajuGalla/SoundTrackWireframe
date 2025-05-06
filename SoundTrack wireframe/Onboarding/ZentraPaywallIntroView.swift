@@ -29,7 +29,7 @@ struct ZentraPaywallIntroView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("We want you to try Zentra for free.")
-                        .font(.system(size: 34, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

@@ -28,7 +28,7 @@ struct FocusChallengeView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("It’s harder than\never to focus.")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

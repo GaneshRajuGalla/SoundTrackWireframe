@@ -34,7 +34,7 @@ struct FocusStruggleTimeView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("When do you struggle\nto focus most?")
-                        .font(.system(size: 28, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

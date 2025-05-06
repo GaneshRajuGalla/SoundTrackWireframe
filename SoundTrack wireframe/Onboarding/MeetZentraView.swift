@@ -28,7 +28,7 @@ struct MeetZentraView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("Meet Zentra")
-                        .font(.system(size: 38, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

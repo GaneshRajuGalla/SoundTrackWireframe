@@ -25,6 +25,9 @@
 		6E4A754A2DC3983F002E83F6 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A75492DC3983F002E83F6 /* UIImage+Extension.swift */; };
 		6E53AF472DA8661500B55FBE /* WelcomeToZentraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */; };
 		6E85D88D2DA70F21008BA122 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */; };
+		6E8D4DDC2DC9C45C00B386D8 /* KumbhSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D4DD92DC9C45C00B386D8 /* KumbhSans-Light.ttf */; };
+		6E8D4DDD2DC9C45C00B386D8 /* KumbhSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D4DDA2DC9C45C00B386D8 /* KumbhSans-Regular.ttf */; };
+		6E8D4DDE2DC9C45C00B386D8 /* KumbhSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D4DD82DC9C45C00B386D8 /* KumbhSans-Bold.ttf */; };
 		6ECCE1382DC3426C0087C34D /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 6ECCE1372DC3426C0087C34D /* RevenueCat */; };
 		6EF4A1372DA9126600801C3E /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */; };
 		6EF4A13B2DA913A600801C3E /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4A13A2DA913A600801C3E /* Text+Extension.swift */; };
@@ -178,9 +181,6 @@
 		844B44C72D8DF87200470202 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B44C62D8DF87200470202 /* OnboardingThreeViewController.swift */; };
 		844B44C92D8DF87B00470202 /* OnboardingFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B44C82D8DF87B00470202 /* OnboardingFourViewController.swift */; };
 		844B44CB2D8DF88100470202 /* OnboardingFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B44CA2D8DF88100470202 /* OnboardingFiveViewController.swift */; };
-		846E6FD52D8F7D77008DFA22 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846E6FD32D8F7D77008DFA22 /* README.txt */; };
-		846E6FD62D8F7D77008DFA22 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846E6FD22D8F7D77008DFA22 /* OFL.txt */; };
-		846E6FD72D8F7D77008DFA22 /* KumbhSans-VariableFont_YOPQ,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 846E6FD12D8F7D77008DFA22 /* KumbhSans-VariableFont_YOPQ,wght.ttf */; };
 		B86020C4A338D7F5E0BCF9D9 /* Pods_SoundTrack_wireframe_SoundTrack_wireframeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B18CDC626C9806FD913B37 /* Pods_SoundTrack_wireframe_SoundTrack_wireframeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -242,6 +242,9 @@
 		6E4A75492DC3983F002E83F6 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		6E53AF462DA8661500B55FBE /* WelcomeToZentraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToZentraView.swift; sourceTree = "<group>"; };
 		6E85D88C2DA70F21008BA122 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		6E8D4DD82DC9C45C00B386D8 /* KumbhSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KumbhSans-Bold.ttf"; sourceTree = "<group>"; };
+		6E8D4DD92DC9C45C00B386D8 /* KumbhSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KumbhSans-Light.ttf"; sourceTree = "<group>"; };
+		6E8D4DDA2DC9C45C00B386D8 /* KumbhSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KumbhSans-Regular.ttf"; sourceTree = "<group>"; };
 		6EF4A1362DA9126600801C3E /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		6EF4A13A2DA913A600801C3E /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		7012811C2A32E34F0066C50C /* HowLongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowLongCell.swift; sourceTree = "<group>"; };
@@ -393,9 +396,6 @@
 		844B44C62D8DF87200470202 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
 		844B44C82D8DF87B00470202 /* OnboardingFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFourViewController.swift; sourceTree = "<group>"; };
 		844B44CA2D8DF88100470202 /* OnboardingFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFiveViewController.swift; sourceTree = "<group>"; };
-		846E6FD12D8F7D77008DFA22 /* KumbhSans-VariableFont_YOPQ,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KumbhSans-VariableFont_YOPQ,wght.ttf"; sourceTree = "<group>"; };
-		846E6FD22D8F7D77008DFA22 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		846E6FD32D8F7D77008DFA22 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		B0957176ED3E0D5143F2BFD6 /* Pods-SoundTrack wireframe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundTrack wireframe.release.xcconfig"; path = "Target Support Files/Pods-SoundTrack wireframe/Pods-SoundTrack wireframe.release.xcconfig"; sourceTree = "<group>"; };
 		B67151AF5BEA24EC5A5D493A /* Pods-SoundTrack wireframe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundTrack wireframe.debug.xcconfig"; path = "Target Support Files/Pods-SoundTrack wireframe/Pods-SoundTrack wireframe.debug.xcconfig"; sourceTree = "<group>"; };
 		B9B18CDC626C9806FD913B37 /* Pods_SoundTrack_wireframe_SoundTrack_wireframeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundTrack_wireframe_SoundTrack_wireframeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -493,6 +493,16 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		6E8D4DDB2DC9C45C00B386D8 /* kumbh-sans */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D4DD82DC9C45C00B386D8 /* KumbhSans-Bold.ttf */,
+				6E8D4DD92DC9C45C00B386D8 /* KumbhSans-Light.ttf */,
+				6E8D4DDA2DC9C45C00B386D8 /* KumbhSans-Regular.ttf */,
+			);
+			path = "kumbh-sans";
+			sourceTree = "<group>";
+		};
 		6EF4A1352DA9122500801C3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,9 +570,9 @@
 		703D15C52A27075F00E455B2 = {
 			isa = PBXGroup;
 			children = (
+				6E8D4DDB2DC9C45C00B386D8 /* kumbh-sans */,
 				6E49E2492DA8C67600532675 /* Colors.xcassets */,
 				6E85D88B2DA70F15008BA122 /* Utilities */,
-				846E6FD42D8F7D77008DFA22 /* Kumbh_Sans */,
 				703D15D02A27075F00E455B2 /* SoundTrack wireframe */,
 				703D15EA2A27076300E455B2 /* SoundTrack wireframeTests */,
 				703D15F42A27076300E455B2 /* SoundTrack wireframeUITests */,
@@ -1017,16 +1027,6 @@
 			path = DWAnimatedLabel;
 			sourceTree = "<group>";
 		};
-		846E6FD42D8F7D77008DFA22 /* Kumbh_Sans */ = {
-			isa = PBXGroup;
-			children = (
-				846E6FD12D8F7D77008DFA22 /* KumbhSans-VariableFont_YOPQ,wght.ttf */,
-				846E6FD22D8F7D77008DFA22 /* OFL.txt */,
-				846E6FD32D8F7D77008DFA22 /* README.txt */,
-			);
-			path = Kumbh_Sans;
-			sourceTree = "<group>";
-		};
 		FC6B67E46237985CD3B10BE7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,9 +1190,9 @@
 				7084C64D2A9F1A2A00988762 /* app_logo.png in Resources */,
 				7084C6732A9F612E00988762 /* SubHeaderView.xib in Resources */,
 				70C1A03D2A9C739E003F2D03 /* DefaultAudio.wav in Resources */,
-				846E6FD52D8F7D77008DFA22 /* README.txt in Resources */,
-				846E6FD62D8F7D77008DFA22 /* OFL.txt in Resources */,
-				846E6FD72D8F7D77008DFA22 /* KumbhSans-VariableFont_YOPQ,wght.ttf in Resources */,
+				6E8D4DDC2DC9C45C00B386D8 /* KumbhSans-Light.ttf in Resources */,
+				6E8D4DDD2DC9C45C00B386D8 /* KumbhSans-Regular.ttf in Resources */,
+				6E8D4DDE2DC9C45C00B386D8 /* KumbhSans-Bold.ttf in Resources */,
 				703D15E12A27076200E455B2 /* LaunchScreen.storyboard in Resources */,
 				703D15DE2A27076200E455B2 /* Assets.xcassets in Resources */,
 				703D15D92A27075F00E455B2 /* Main.storyboard in Resources */,

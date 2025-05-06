@@ -13,21 +13,21 @@ struct PrimaryButtonStyle: ButtonStyle {
             Spacer()
             configuration.label
             Spacer()
-            Image(systemName: "arrow.right")
+            Image("right-arrow")
         }
-        .font(.system(size: 15, weight: .bold))
+        .font(.custom("Manrope-Bold", size: 25))
         .foregroundColor(Color("2A2A2A"))
         .padding(.horizontal, 20)
         .frame(height: 68)
         .frame(maxWidth: .infinity)
         .background(
             LinearGradient(
-                gradient: Gradient(colors: [Color("DBF5FF"), Color("E2CAFF")]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+                gradient: Gradient(colors: [Color("E2CAFF"), Color("DBF5FF")]),
+                startPoint: .top,
+                endPoint: .bottom
             )
         )
-        .cornerRadius(16)
+        .cornerRadius(20)
     }
 }
 #if DEBUG

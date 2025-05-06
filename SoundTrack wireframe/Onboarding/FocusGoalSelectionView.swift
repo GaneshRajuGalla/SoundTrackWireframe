@@ -35,7 +35,7 @@ struct FocusGoalSelectionView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("What’s your #1 focus\ngoal right now?")
-                        .font(.system(size: 28, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)

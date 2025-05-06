@@ -28,7 +28,7 @@ struct SoundFocusBoostView: View {
             ContentView {
                 VStack(spacing: 0) {
                     Text("The right sound\nhelps you focus.")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.custom("KumbhSans-Bold", size: 38))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(titleOpacity)
