@@ -50,7 +50,7 @@ struct FocusStruggleTimeView: View {
                                 }
                             } label: {
                                 Text(option)
-                                    .font(.system(size: 16, weight: .medium))
+                                    .font(.custom("Manrope-Regular", size: 16))
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 16)
                                     .background(selectedTime == option ? Color("E0D6FF") : Color.clear)
@@ -65,7 +65,6 @@ struct FocusStruggleTimeView: View {
                     }
                     .opacity(optionsOpacity)
                     .offset(y: optionsOffset)
-                    .padding(.top, 10)
 
                     Spacer()
 

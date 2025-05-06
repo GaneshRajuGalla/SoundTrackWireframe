@@ -36,7 +36,7 @@ struct ZentraTrustView: View {
 
                     Spacer()
                     
-                    Text("89% of users report more effective focus after just one week.")
+                    Text("89% of users report more\neffective focus after just\none week.")
                         .foregroundLinearGradient(
                             stops: [
                                 .init(color: .white, location: 0),
@@ -45,7 +45,7 @@ struct ZentraTrustView: View {
                             startPoint: .leading,
                             endPoint: .trailing
                         )
-                        .font(.system(size: 20))
+                        .font(.custom("Manrope-Regular", size: 20))
                         .multilineTextAlignment(.center)
                         .opacity(descriptionOpacity)
                         .offset(y: descriptionOffset)
