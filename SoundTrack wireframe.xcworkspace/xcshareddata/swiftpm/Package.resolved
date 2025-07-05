@@ -1,13 +1,13 @@
 {
-  "originHash" : "f1af5ead0381b5353f0da274dc6210ab3ccf1c18a508c7d5be0b01f14cd6eb8e",
+  "originHash" : "267732f6e2f5ab76780ad53c992ff536c864846ef4908b3800a3671304a38b73",
   "pins" : [
     {
       "identity" : "purchases-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RevenueCat/purchases-ios.git",
       "state" : {
-        "revision" : "84e860c081dc48bda81d5a51514f43218b2f4bf1",
-        "version" : "5.22.1"
+        "revision" : "e90dec89a46199cc57eb53d1523ff8606edac276",
+        "version" : "5.30.0"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/superwall/Superscript-iOS",
       "state" : {
-        "revision" : "a1ccc64da3c1b208c50de0ea46812f0027b14858",
-        "version" : "0.1.18"
+        "revision" : "5f99cecebdbbdb0be96f413dbd0e7458180977ed",
+        "version" : "0.2.8"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/superwall/Superwall-iOS",
       "state" : {
-        "revision" : "191447cb00820b76959049f36c8f88489b14ec87",
-        "version" : "4.0.6"
+        "revision" : "f42a089760ffbc6a626cd693cb0f301277902e0b",
+        "version" : "4.5.2"
       }
     }
   ],
